@@ -191,16 +191,19 @@ export default function MaintenReqPage() {
         title="Brief Issue Description *"
         subtitle="One sentence that describes the issue. 120 chars max."
         input={
-          <Textarea
-            id="desc"
-            name="desc"
-            minRows={1}
-            maxRows={5}
-            value={formik.values.desc}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.touched.desc && formik.errors.desc}
-          />
+          <div>
+            <Textarea
+              id="desc"
+              name="desc"
+              minRows={1}
+              maxRows={5}
+              value={formik.values.desc}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.desc && formik.errors.desc ? true : false}
+            />
+            <p className="text-danger text-sm">{formik.errors.desc}</p>
+          </div>
         }
       />
 
@@ -208,15 +211,19 @@ export default function MaintenReqPage() {
         title="Issue Details *"
         subtitle="Provide as much details of the issue as you can"
         input={
-          <Textarea
-            id="details"
-            name="details"
-            minRows={5}
-            value={formik.values.details}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.touched.details && formik.errors.details}
-          />
+          <div>
+            <Textarea
+              id="details"
+              name="details"
+              minRows={5}
+              value={formik.values.details}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.details && formik.errors.details ? true : false
+              }
+            />
+          </div>
         }
       />
 
