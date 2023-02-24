@@ -16,7 +16,7 @@ import Switch from "@mui/material/Switch";
 import { useFormik } from "formik";
 import formikOptions from "../services/maintenance-request";
 
-export default function MaintenReqPage() {
+export default function OpenTicket() {
   const [priority, setPriority] = useState("");
   const [technician, setTechnician] = useState("");
   const [date, setDate] = useState(null);
@@ -26,7 +26,7 @@ export default function MaintenReqPage() {
   const formik = useFormik(formikOptions());
 
   return (
-    <div className="flex flex-col gap-5 p-6 md:p-10">
+    <div className="flex flex-col gap-5">
       <div className="flex flex-row justify-between md:justify-start md:gap-5">
         <div className="flex flex-col gap-0">
           <p className="text-grey">created by</p>
